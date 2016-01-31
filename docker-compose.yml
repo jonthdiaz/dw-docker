@@ -1,0 +1,15 @@
+# database container
+db:
+    image: jonthdiaz/postgresql:9.3
+    ports:
+    -    "5432:5432"
+web:
+    image: jhonny/dw
+    command: su -m dw -c  ./run_web.sh
+    volumes:
+    -    .:/home/jonathan/projects/webs/digital-workers/digital-works
+    ports: 
+    -    "8080:8080"
+    links:
+    -    db:db
+
