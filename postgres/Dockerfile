@@ -1,6 +1,9 @@
 FROM ubuntu:14.04
 MAINTAINER jonthdiaz <jonthdiaz@gmail.com>
 
+ENV POSTGRES_USER dw_admin
+ENV POSTGRES_PASSWORD dw_admin
+ENV POSTGRES_DB dw_db
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8
 
 RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main" > /etc/apt/sources.list.d/pgdg.list
